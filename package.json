@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "@fhir-uck/fhir-converter-core": "^1.2.4"
+  }
+}
