@@ -1,0 +1,38 @@
+[
+  {
+    "patientId": "Allen-Ray-1975-07-20",
+    "name": [
+                {
+                "use": "official",
+                "family": "Allen",
+                "given": [
+                    "Ray"
+                ]
+                }
+            ],
+    "gender": "male",
+    "birthDate": "1975-07-20",
+    "heightValue": 196,
+    "heightUnit": "cm",
+    "weightValue": 93,
+    "weightUnit": "kg"
+  },
+  {
+    "patientId": "Derrick-Rose-1988-10-04",
+    "name": [
+            {
+            "use": "official",
+            "family": "Rose",
+            "given": [
+                "Derrick"
+            ]
+            }
+        ],
+    "gender": "male",
+    "birthDate": "1988-10-04",
+    "heightValue": 191,
+    "heightUnit": "cm",
+    "weightValue": 91,
+    "weightUnit": "kg"
+  }
+]
