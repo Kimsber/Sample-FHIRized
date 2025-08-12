@@ -9,14 +9,19 @@ async function exampleConvert() {
   const convert = new Convert(config);
   const result = await convert.convert(data);
 
-  // 將結果寫入 JSON 檔案
-  const outputPath = path.join(__dirname, 'conversion_results.json');
-  fs.writeFileSync(outputPath, JSON.stringify(result, null, 2), 'utf8');
-  console.log('轉換結果已匯出至:', outputPath);
+  let output = { bundle: result };
 
-  /*const validator = new Validator();*/
-  /*const validationResult = await validator.validate(result);*/
-  /*console.log('驗證結果:', validationResult);*/
+  // If validate is true in config, run validation and include in output
+  if (config.validate) {
+    const validator = new Validator();
+    const validationResults = await validator.validate(result);
+    output.validationResults = validationResults;
+  }
+
+  // Write conversion result (with or without validation)
+  const outputPath = path.join(__dirname, 'conversion_results.json');
+  fs.writeFileSync(outputPath, JSON.stringify(output, null, 2), 'utf8');
+  console.log('轉換結果已匯出至:', outputPath);
 }
 
 exampleConvert();
