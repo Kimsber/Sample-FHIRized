@@ -5,8 +5,8 @@ import subprocess
 csv_file = 'bmi_patients.csv'
 json_file = 'data.json'
 
-df = pd.read_csv(csv_file)
-df.to_json(json_file, orient="records")
+df = pd.read_csv(csv_file, encoding='utf-8')
+df.to_json(json_file, orient="records", force_ascii=False, indent=2)
 
 # Running a Node.js script
 result = subprocess.run(

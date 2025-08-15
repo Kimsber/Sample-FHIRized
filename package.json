@@ -1,6 +1,7 @@
 {
   "dependencies": {
     "@fhir-uck/fhir-converter-core": "^1.2.4",
-    "express": "^5.1.0"
+    "express": "^5.1.0",
+    "react": "^19.1.1"
   }
 }

@@ -21,7 +21,9 @@ def generate_bmi_data(num_records, filename):
         else:
             height_cm = round(max(140, min(185, fake.random.normalvariate(160, 6))), 1)
             weight_kg = round(max(40, min(100, fake.random.normalvariate(58, 8))), 1)
+        patient_id = f"{last_name}-{first_name}-{dob}"
         data.append({
+            'patientId': patient_id,
             'Last Name': last_name,
             'First Name': first_name,
             'Gender': gender,
