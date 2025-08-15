@@ -24,12 +24,12 @@ def generate_bmi_data(num_records, filename):
         patient_id = f"{last_name}-{first_name}-{dob}"
         data.append({
             'patientId': patient_id,
-            'Last Name': last_name,
-            'First Name': first_name,
+            'LastName': last_name,
+            'FirstName': first_name,
             'Gender': gender,
-            'Date of Birth': dob,
-            'Height (cm)': height_cm,
-            'Weight (kg)': weight_kg,
+            'BirthDate': dob,
+            'Height(cm)': height_cm,
+            'Weight(kg)': weight_kg,
         })
     df = pd.DataFrame(data)
     df.to_csv(filename, index=False)
