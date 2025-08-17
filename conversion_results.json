@@ -5,7 +5,34 @@
       "type": "transaction",
       "entry": [
         {
-          "fullUrl": "https://twcore.hapi.fhir.tw//Patient/ad35c8fc-1b2b-4178-ac62-67e5539e99b9",
+          "fullUrl": "https://twcore.hapi.fhir.tw//Organization/2e61ac34-0a8a-4c60-b50a-3a9f8346e985",
+          "resource": {
+            "id": "2e61ac34-0a8a-4c60-b50a-3a9f8346e985",
+            "resourceType": "Organization",
+            "identifier": [
+              {
+                "type": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+                      "code": "PRN"
+                    }
+                  ]
+                },
+                "system": "https://twcore.mohw.gov.tw/ig/twcore/CodeSystem/organization-identifier-tw",
+                "value": "0602030026"
+              }
+            ],
+            "active": true,
+            "name": "高雄榮民總醫院"
+          },
+          "request": {
+            "method": "PUT",
+            "url": "Organization/2e61ac34-0a8a-4c60-b50a-3a9f8346e985"
+          }
+        },
+        {
+          "fullUrl": "https://twcore.hapi.fhir.tw//Patient/30212b83-fa6b-4a07-ad92-8bdb47883af3",
           "resource": {
             "resourceType": "Patient",
             "meta": {
@@ -19,18 +46,126 @@
                 "value": "岳-世明-2018-09-29"
               }
             ],
+            "name": [
+              {
+                "use": "official",
+                "family": "岳",
+                "given": [
+                  "世明"
+                ]
+              }
+            ],
+            "gender": "male",
+            "birthDate": "2018-09-29",
             "managingOrganization": {
               "reference": "Organization/0602030026"
             },
-            "id": "ad35c8fc-1b2b-4178-ac62-67e5539e99b9"
+            "id": "岳-世明-2018-09-29"
           },
           "request": {
             "method": "PUT",
-            "url": "/Patient/ad35c8fc-1b2b-4178-ac62-67e5539e99b9"
+            "url": "/Patient/30212b83-fa6b-4a07-ad92-8bdb47883af3"
           }
         },
         {
-          "fullUrl": "https://twcore.hapi.fhir.tw//Patient/6501f40e-81ca-4bc7-9a4c-93125bea96f5",
+          "fullUrl": "https://twcore.hapi.fhir.tw//Observation/674e55c4-31f4-4c03-a73f-247eec79ec0e",
+          "resource": {
+            "resourceType": "Observation",
+            "meta": {
+              "profile": [
+                "https://twcore.mohw.gov.tw/ig/twcore/StructureDefinition/Observation-vitalSigns-twcore"
+              ]
+            },
+            "status": "final",
+            "category": [
+              {
+                "coding": [
+                  {
+                    "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                    "code": "vital-signs",
+                    "display": "Vital Signs"
+                  }
+                ]
+              }
+            ],
+            "code": {
+              "coding": [
+                {
+                  "system": "http://loinc.org",
+                  "code": "85353-1",
+                  "display": "Vital signs, weight, height, head circumference, oxygen saturation and BMI panel"
+                }
+              ],
+              "text": "Vital Signs Panel"
+            },
+            "subject": {
+              "reference": "Patient/岳-世明-2018-09-29"
+            },
+            "component": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://loinc.org",
+                      "code": "8302-2",
+                      "display": "Body height"
+                    }
+                  ],
+                  "text": "Body Height"
+                },
+                "valueQuantity": {
+                  "value": 171.9,
+                  "unit": "cm",
+                  "system": "http://unitsofmeasure.org",
+                  "code": "cm"
+                }
+              },
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://loinc.org",
+                      "code": "29463-7",
+                      "display": "Body weight"
+                    }
+                  ],
+                  "text": "Body Weight"
+                },
+                "valueQuantity": {
+                  "value": 76.9,
+                  "unit": "kg",
+                  "system": "http://unitsofmeasure.org",
+                  "code": "kg"
+                }
+              },
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://loinc.org",
+                      "code": "39156-5",
+                      "display": "Body mass index (BMI)"
+                    }
+                  ],
+                  "text": "BMI"
+                },
+                "valueQuantity": {
+                  "value": "#Observation.bmi",
+                  "unit": "kg/m2",
+                  "system": "http://unitsofmeasure.org",
+                  "code": "kg/m2"
+                }
+              }
+            ],
+            "id": "674e55c4-31f4-4c03-a73f-247eec79ec0e"
+          },
+          "request": {
+            "method": "PUT",
+            "url": "/Observation/674e55c4-31f4-4c03-a73f-247eec79ec0e"
+          }
+        },
+        {
+          "fullUrl": "https://twcore.hapi.fhir.tw//Patient/db6a077e-e045-48db-a1a2-484e78f1f18b",
           "resource": {
             "resourceType": "Patient",
             "meta": {
@@ -44,18 +179,126 @@
                 "value": "王-文傑-1989-02-13"
               }
             ],
+            "name": [
+              {
+                "use": "official",
+                "family": "王",
+                "given": [
+                  "文傑"
+                ]
+              }
+            ],
+            "gender": "male",
+            "birthDate": "1989-02-13",
             "managingOrganization": {
               "reference": "Organization/0602030026"
             },
-            "id": "6501f40e-81ca-4bc7-9a4c-93125bea96f5"
+            "id": "王-文傑-1989-02-13"
           },
           "request": {
             "method": "PUT",
-            "url": "/Patient/6501f40e-81ca-4bc7-9a4c-93125bea96f5"
+            "url": "/Patient/db6a077e-e045-48db-a1a2-484e78f1f18b"
           }
         },
         {
-          "fullUrl": "https://twcore.hapi.fhir.tw//Patient/8c4c1620-1f6f-4c14-a511-1deb88b03482",
+          "fullUrl": "https://twcore.hapi.fhir.tw//Observation/d8d4a3b4-acc4-47a6-ab9c-d10324d7ec27",
+          "resource": {
+            "resourceType": "Observation",
+            "meta": {
+              "profile": [
+                "https://twcore.mohw.gov.tw/ig/twcore/StructureDefinition/Observation-vitalSigns-twcore"
+              ]
+            },
+            "status": "final",
+            "category": [
+              {
+                "coding": [
+                  {
+                    "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                    "code": "vital-signs",
+                    "display": "Vital Signs"
+                  }
+                ]
+              }
+            ],
+            "code": {
+              "coding": [
+                {
+                  "system": "http://loinc.org",
+                  "code": "85353-1",
+                  "display": "Vital signs, weight, height, head circumference, oxygen saturation and BMI panel"
+                }
+              ],
+              "text": "Vital Signs Panel"
+            },
+            "subject": {
+              "reference": "Patient/王-文傑-1989-02-13"
+            },
+            "component": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://loinc.org",
+                      "code": "8302-2",
+                      "display": "Body height"
+                    }
+                  ],
+                  "text": "Body Height"
+                },
+                "valueQuantity": {
+                  "value": 170.7,
+                  "unit": "cm",
+                  "system": "http://unitsofmeasure.org",
+                  "code": "cm"
+                }
+              },
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://loinc.org",
+                      "code": "29463-7",
+                      "display": "Body weight"
+                    }
+                  ],
+                  "text": "Body Weight"
+                },
+                "valueQuantity": {
+                  "value": 68.1,
+                  "unit": "kg",
+                  "system": "http://unitsofmeasure.org",
+                  "code": "kg"
+                }
+              },
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://loinc.org",
+                      "code": "39156-5",
+                      "display": "Body mass index (BMI)"
+                    }
+                  ],
+                  "text": "BMI"
+                },
+                "valueQuantity": {
+                  "value": "#Observation.bmi",
+                  "unit": "kg/m2",
+                  "system": "http://unitsofmeasure.org",
+                  "code": "kg/m2"
+                }
+              }
+            ],
+            "id": "d8d4a3b4-acc4-47a6-ab9c-d10324d7ec27"
+          },
+          "request": {
+            "method": "PUT",
+            "url": "/Observation/d8d4a3b4-acc4-47a6-ab9c-d10324d7ec27"
+          }
+        },
+        {
+          "fullUrl": "https://twcore.hapi.fhir.tw//Patient/718aa490-fbde-40c3-acdb-b624710c8686",
           "resource": {
             "resourceType": "Patient",
             "meta": {
@@ -69,18 +312,126 @@
                 "value": "周-秀美-1981-07-18"
               }
             ],
+            "name": [
+              {
+                "use": "official",
+                "family": "周",
+                "given": [
+                  "秀美"
+                ]
+              }
+            ],
+            "gender": "female",
+            "birthDate": "1981-07-18",
             "managingOrganization": {
               "reference": "Organization/0602030026"
             },
-            "id": "8c4c1620-1f6f-4c14-a511-1deb88b03482"
+            "id": "周-秀美-1981-07-18"
           },
           "request": {
             "method": "PUT",
-            "url": "/Patient/8c4c1620-1f6f-4c14-a511-1deb88b03482"
+            "url": "/Patient/718aa490-fbde-40c3-acdb-b624710c8686"
           }
         },
         {
-          "fullUrl": "https://twcore.hapi.fhir.tw//Patient/3f82cc69-e6af-4686-985f-25fc5fc70b3a",
+          "fullUrl": "https://twcore.hapi.fhir.tw//Observation/ee148d3f-4de7-4a3b-8cbe-6387c702c13f",
+          "resource": {
+            "resourceType": "Observation",
+            "meta": {
+              "profile": [
+                "https://twcore.mohw.gov.tw/ig/twcore/StructureDefinition/Observation-vitalSigns-twcore"
+              ]
+            },
+            "status": "final",
+            "category": [
+              {
+                "coding": [
+                  {
+                    "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                    "code": "vital-signs",
+                    "display": "Vital Signs"
+                  }
+                ]
+              }
+            ],
+            "code": {
+              "coding": [
+                {
+                  "system": "http://loinc.org",
+                  "code": "85353-1",
+                  "display": "Vital signs, weight, height, head circumference, oxygen saturation and BMI panel"
+                }
+              ],
+              "text": "Vital Signs Panel"
+            },
+            "subject": {
+              "reference": "Patient/周-秀美-1981-07-18"
+            },
+            "component": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://loinc.org",
+                      "code": "8302-2",
+                      "display": "Body height"
+                    }
+                  ],
+                  "text": "Body Height"
+                },
+                "valueQuantity": {
+                  "value": 163.1,
+                  "unit": "cm",
+                  "system": "http://unitsofmeasure.org",
+                  "code": "cm"
+                }
+              },
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://loinc.org",
+                      "code": "29463-7",
+                      "display": "Body weight"
+                    }
+                  ],
+                  "text": "Body Weight"
+                },
+                "valueQuantity": {
+                  "value": 45.2,
+                  "unit": "kg",
+                  "system": "http://unitsofmeasure.org",
+                  "code": "kg"
+                }
+              },
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://loinc.org",
+                      "code": "39156-5",
+                      "display": "Body mass index (BMI)"
+                    }
+                  ],
+                  "text": "BMI"
+                },
+                "valueQuantity": {
+                  "value": "#Observation.bmi",
+                  "unit": "kg/m2",
+                  "system": "http://unitsofmeasure.org",
+                  "code": "kg/m2"
+                }
+              }
+            ],
+            "id": "ee148d3f-4de7-4a3b-8cbe-6387c702c13f"
+          },
+          "request": {
+            "method": "PUT",
+            "url": "/Observation/ee148d3f-4de7-4a3b-8cbe-6387c702c13f"
+          }
+        },
+        {
+          "fullUrl": "https://twcore.hapi.fhir.tw//Patient/240a78bc-8a69-4fb8-ae03-22cd03e6ffa4",
           "resource": {
             "resourceType": "Patient",
             "meta": {
@@ -94,18 +445,126 @@
                 "value": "楊-俊明-2025-04-09"
               }
             ],
+            "name": [
+              {
+                "use": "official",
+                "family": "楊",
+                "given": [
+                  "俊明"
+                ]
+              }
+            ],
+            "gender": "male",
+            "birthDate": "2025-04-09",
             "managingOrganization": {
               "reference": "Organization/0602030026"
             },
-            "id": "3f82cc69-e6af-4686-985f-25fc5fc70b3a"
+            "id": "楊-俊明-2025-04-09"
           },
           "request": {
             "method": "PUT",
-            "url": "/Patient/3f82cc69-e6af-4686-985f-25fc5fc70b3a"
+            "url": "/Patient/240a78bc-8a69-4fb8-ae03-22cd03e6ffa4"
           }
         },
         {
-          "fullUrl": "https://twcore.hapi.fhir.tw//Patient/8cfb6b70-b36c-41d9-8fe2-8bb221c424a2",
+          "fullUrl": "https://twcore.hapi.fhir.tw//Observation/73b639f0-d12b-4b55-878d-084eeb18a52d",
+          "resource": {
+            "resourceType": "Observation",
+            "meta": {
+              "profile": [
+                "https://twcore.mohw.gov.tw/ig/twcore/StructureDefinition/Observation-vitalSigns-twcore"
+              ]
+            },
+            "status": "final",
+            "category": [
+              {
+                "coding": [
+                  {
+                    "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                    "code": "vital-signs",
+                    "display": "Vital Signs"
+                  }
+                ]
+              }
+            ],
+            "code": {
+              "coding": [
+                {
+                  "system": "http://loinc.org",
+                  "code": "85353-1",
+                  "display": "Vital signs, weight, height, head circumference, oxygen saturation and BMI panel"
+                }
+              ],
+              "text": "Vital Signs Panel"
+            },
+            "subject": {
+              "reference": "Patient/楊-俊明-2025-04-09"
+            },
+            "component": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://loinc.org",
+                      "code": "8302-2",
+                      "display": "Body height"
+                    }
+                  ],
+                  "text": "Body Height"
+                },
+                "valueQuantity": {
+                  "value": 165.6,
+                  "unit": "cm",
+                  "system": "http://unitsofmeasure.org",
+                  "code": "cm"
+                }
+              },
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://loinc.org",
+                      "code": "29463-7",
+                      "display": "Body weight"
+                    }
+                  ],
+                  "text": "Body Weight"
+                },
+                "valueQuantity": {
+                  "value": 71.3,
+                  "unit": "kg",
+                  "system": "http://unitsofmeasure.org",
+                  "code": "kg"
+                }
+              },
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://loinc.org",
+                      "code": "39156-5",
+                      "display": "Body mass index (BMI)"
+                    }
+                  ],
+                  "text": "BMI"
+                },
+                "valueQuantity": {
+                  "value": "#Observation.bmi",
+                  "unit": "kg/m2",
+                  "system": "http://unitsofmeasure.org",
+                  "code": "kg/m2"
+                }
+              }
+            ],
+            "id": "73b639f0-d12b-4b55-878d-084eeb18a52d"
+          },
+          "request": {
+            "method": "PUT",
+            "url": "/Observation/73b639f0-d12b-4b55-878d-084eeb18a52d"
+          }
+        },
+        {
+          "fullUrl": "https://twcore.hapi.fhir.tw//Patient/85d65a66-c2be-43dd-92c3-3be8d836c189",
           "resource": {
             "resourceType": "Patient",
             "meta": {
@@ -119,18 +578,126 @@
                 "value": "蘇-淑玲-1993-04-24"
               }
             ],
+            "name": [
+              {
+                "use": "official",
+                "family": "蘇",
+                "given": [
+                  "淑玲"
+                ]
+              }
+            ],
+            "gender": "female",
+            "birthDate": "1993-04-24",
             "managingOrganization": {
               "reference": "Organization/0602030026"
             },
-            "id": "8cfb6b70-b36c-41d9-8fe2-8bb221c424a2"
+            "id": "蘇-淑玲-1993-04-24"
           },
           "request": {
             "method": "PUT",
-            "url": "/Patient/8cfb6b70-b36c-41d9-8fe2-8bb221c424a2"
+            "url": "/Patient/85d65a66-c2be-43dd-92c3-3be8d836c189"
           }
         },
         {
-          "fullUrl": "https://twcore.hapi.fhir.tw//Patient/249dbb9b-ade1-4569-93e0-b6d6b173947f",
+          "fullUrl": "https://twcore.hapi.fhir.tw//Observation/3d0fec8c-f51c-4431-9ab7-63cd88ec88f3",
+          "resource": {
+            "resourceType": "Observation",
+            "meta": {
+              "profile": [
+                "https://twcore.mohw.gov.tw/ig/twcore/StructureDefinition/Observation-vitalSigns-twcore"
+              ]
+            },
+            "status": "final",
+            "category": [
+              {
+                "coding": [
+                  {
+                    "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                    "code": "vital-signs",
+                    "display": "Vital Signs"
+                  }
+                ]
+              }
+            ],
+            "code": {
+              "coding": [
+                {
+                  "system": "http://loinc.org",
+                  "code": "85353-1",
+                  "display": "Vital signs, weight, height, head circumference, oxygen saturation and BMI panel"
+                }
+              ],
+              "text": "Vital Signs Panel"
+            },
+            "subject": {
+              "reference": "Patient/蘇-淑玲-1993-04-24"
+            },
+            "component": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://loinc.org",
+                      "code": "8302-2",
+                      "display": "Body height"
+                    }
+                  ],
+                  "text": "Body Height"
+                },
+                "valueQuantity": {
+                  "value": 165.9,
+                  "unit": "cm",
+                  "system": "http://unitsofmeasure.org",
+                  "code": "cm"
+                }
+              },
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://loinc.org",
+                      "code": "29463-7",
+                      "display": "Body weight"
+                    }
+                  ],
+                  "text": "Body Weight"
+                },
+                "valueQuantity": {
+                  "value": 58.2,
+                  "unit": "kg",
+                  "system": "http://unitsofmeasure.org",
+                  "code": "kg"
+                }
+              },
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://loinc.org",
+                      "code": "39156-5",
+                      "display": "Body mass index (BMI)"
+                    }
+                  ],
+                  "text": "BMI"
+                },
+                "valueQuantity": {
+                  "value": "#Observation.bmi",
+                  "unit": "kg/m2",
+                  "system": "http://unitsofmeasure.org",
+                  "code": "kg/m2"
+                }
+              }
+            ],
+            "id": "3d0fec8c-f51c-4431-9ab7-63cd88ec88f3"
+          },
+          "request": {
+            "method": "PUT",
+            "url": "/Observation/3d0fec8c-f51c-4431-9ab7-63cd88ec88f3"
+          }
+        },
+        {
+          "fullUrl": "https://twcore.hapi.fhir.tw//Patient/af0d8144-3f06-409b-9cba-395453258d26",
           "resource": {
             "resourceType": "Patient",
             "meta": {
@@ -144,18 +711,126 @@
                 "value": "林-秀美-1974-08-06"
               }
             ],
+            "name": [
+              {
+                "use": "official",
+                "family": "林",
+                "given": [
+                  "秀美"
+                ]
+              }
+            ],
+            "gender": "female",
+            "birthDate": "1974-08-06",
             "managingOrganization": {
               "reference": "Organization/0602030026"
             },
-            "id": "249dbb9b-ade1-4569-93e0-b6d6b173947f"
+            "id": "林-秀美-1974-08-06"
           },
           "request": {
             "method": "PUT",
-            "url": "/Patient/249dbb9b-ade1-4569-93e0-b6d6b173947f"
+            "url": "/Patient/af0d8144-3f06-409b-9cba-395453258d26"
           }
         },
         {
-          "fullUrl": "https://twcore.hapi.fhir.tw//Patient/9d7ef399-c777-45fc-b6b6-9bb58b95587a",
+          "fullUrl": "https://twcore.hapi.fhir.tw//Observation/4f28322d-31b8-4668-94e9-9b4a2b9bf246",
+          "resource": {
+            "resourceType": "Observation",
+            "meta": {
+              "profile": [
+                "https://twcore.mohw.gov.tw/ig/twcore/StructureDefinition/Observation-vitalSigns-twcore"
+              ]
+            },
+            "status": "final",
+            "category": [
+              {
+                "coding": [
+                  {
+                    "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                    "code": "vital-signs",
+                    "display": "Vital Signs"
+                  }
+                ]
+              }
+            ],
+            "code": {
+              "coding": [
+                {
+                  "system": "http://loinc.org",
+                  "code": "85353-1",
+                  "display": "Vital signs, weight, height, head circumference, oxygen saturation and BMI panel"
+                }
+              ],
+              "text": "Vital Signs Panel"
+            },
+            "subject": {
+              "reference": "Patient/林-秀美-1974-08-06"
+            },
+            "component": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://loinc.org",
+                      "code": "8302-2",
+                      "display": "Body height"
+                    }
+                  ],
+                  "text": "Body Height"
+                },
+                "valueQuantity": {
+                  "value": 156.3,
+                  "unit": "cm",
+                  "system": "http://unitsofmeasure.org",
+                  "code": "cm"
+                }
+              },
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://loinc.org",
+                      "code": "29463-7",
+                      "display": "Body weight"
+                    }
+                  ],
+                  "text": "Body Weight"
+                },
+                "valueQuantity": {
+                  "value": 66.5,
+                  "unit": "kg",
+                  "system": "http://unitsofmeasure.org",
+                  "code": "kg"
+                }
+              },
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://loinc.org",
+                      "code": "39156-5",
+                      "display": "Body mass index (BMI)"
+                    }
+                  ],
+                  "text": "BMI"
+                },
+                "valueQuantity": {
+                  "value": "#Observation.bmi",
+                  "unit": "kg/m2",
+                  "system": "http://unitsofmeasure.org",
+                  "code": "kg/m2"
+                }
+              }
+            ],
+            "id": "4f28322d-31b8-4668-94e9-9b4a2b9bf246"
+          },
+          "request": {
+            "method": "PUT",
+            "url": "/Observation/4f28322d-31b8-4668-94e9-9b4a2b9bf246"
+          }
+        },
+        {
+          "fullUrl": "https://twcore.hapi.fhir.tw//Patient/25038595-dee2-4302-8b8a-860994021c46",
           "resource": {
             "resourceType": "Patient",
             "meta": {
@@ -169,18 +844,126 @@
                 "value": "李-秀枝-1924-05-25"
               }
             ],
+            "name": [
+              {
+                "use": "official",
+                "family": "李",
+                "given": [
+                  "秀枝"
+                ]
+              }
+            ],
+            "gender": "female",
+            "birthDate": "1924-05-25",
             "managingOrganization": {
               "reference": "Organization/0602030026"
             },
-            "id": "9d7ef399-c777-45fc-b6b6-9bb58b95587a"
+            "id": "李-秀枝-1924-05-25"
           },
           "request": {
             "method": "PUT",
-            "url": "/Patient/9d7ef399-c777-45fc-b6b6-9bb58b95587a"
+            "url": "/Patient/25038595-dee2-4302-8b8a-860994021c46"
           }
         },
         {
-          "fullUrl": "https://twcore.hapi.fhir.tw//Patient/b8d79cdf-c443-4d32-8c59-0a4784ebe1f3",
+          "fullUrl": "https://twcore.hapi.fhir.tw//Observation/62141caa-d85f-4507-999d-a83bcf5e451f",
+          "resource": {
+            "resourceType": "Observation",
+            "meta": {
+              "profile": [
+                "https://twcore.mohw.gov.tw/ig/twcore/StructureDefinition/Observation-vitalSigns-twcore"
+              ]
+            },
+            "status": "final",
+            "category": [
+              {
+                "coding": [
+                  {
+                    "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                    "code": "vital-signs",
+                    "display": "Vital Signs"
+                  }
+                ]
+              }
+            ],
+            "code": {
+              "coding": [
+                {
+                  "system": "http://loinc.org",
+                  "code": "85353-1",
+                  "display": "Vital signs, weight, height, head circumference, oxygen saturation and BMI panel"
+                }
+              ],
+              "text": "Vital Signs Panel"
+            },
+            "subject": {
+              "reference": "Patient/李-秀枝-1924-05-25"
+            },
+            "component": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://loinc.org",
+                      "code": "8302-2",
+                      "display": "Body height"
+                    }
+                  ],
+                  "text": "Body Height"
+                },
+                "valueQuantity": {
+                  "value": 162.3,
+                  "unit": "cm",
+                  "system": "http://unitsofmeasure.org",
+                  "code": "cm"
+                }
+              },
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://loinc.org",
+                      "code": "29463-7",
+                      "display": "Body weight"
+                    }
+                  ],
+                  "text": "Body Weight"
+                },
+                "valueQuantity": {
+                  "value": 40,
+                  "unit": "kg",
+                  "system": "http://unitsofmeasure.org",
+                  "code": "kg"
+                }
+              },
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://loinc.org",
+                      "code": "39156-5",
+                      "display": "Body mass index (BMI)"
+                    }
+                  ],
+                  "text": "BMI"
+                },
+                "valueQuantity": {
+                  "value": "#Observation.bmi",
+                  "unit": "kg/m2",
+                  "system": "http://unitsofmeasure.org",
+                  "code": "kg/m2"
+                }
+              }
+            ],
+            "id": "62141caa-d85f-4507-999d-a83bcf5e451f"
+          },
+          "request": {
+            "method": "PUT",
+            "url": "/Observation/62141caa-d85f-4507-999d-a83bcf5e451f"
+          }
+        },
+        {
+          "fullUrl": "https://twcore.hapi.fhir.tw//Patient/a3a827f8-96cc-4a89-b429-c90f3315c0ab",
           "resource": {
             "resourceType": "Patient",
             "meta": {
@@ -194,18 +977,126 @@
                 "value": "吳-雅慧-1921-12-03"
               }
             ],
+            "name": [
+              {
+                "use": "official",
+                "family": "吳",
+                "given": [
+                  "雅慧"
+                ]
+              }
+            ],
+            "gender": "female",
+            "birthDate": "1921-12-03",
             "managingOrganization": {
               "reference": "Organization/0602030026"
             },
-            "id": "b8d79cdf-c443-4d32-8c59-0a4784ebe1f3"
+            "id": "吳-雅慧-1921-12-03"
           },
           "request": {
             "method": "PUT",
-            "url": "/Patient/b8d79cdf-c443-4d32-8c59-0a4784ebe1f3"
+            "url": "/Patient/a3a827f8-96cc-4a89-b429-c90f3315c0ab"
           }
         },
         {
-          "fullUrl": "https://twcore.hapi.fhir.tw//Patient/02671f2c-b85f-4199-86e5-57cd130f6cbc",
+          "fullUrl": "https://twcore.hapi.fhir.tw//Observation/9857d71f-5200-4b52-84f7-d900fdf224d4",
+          "resource": {
+            "resourceType": "Observation",
+            "meta": {
+              "profile": [
+                "https://twcore.mohw.gov.tw/ig/twcore/StructureDefinition/Observation-vitalSigns-twcore"
+              ]
+            },
+            "status": "final",
+            "category": [
+              {
+                "coding": [
+                  {
+                    "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                    "code": "vital-signs",
+                    "display": "Vital Signs"
+                  }
+                ]
+              }
+            ],
+            "code": {
+              "coding": [
+                {
+                  "system": "http://loinc.org",
+                  "code": "85353-1",
+                  "display": "Vital signs, weight, height, head circumference, oxygen saturation and BMI panel"
+                }
+              ],
+              "text": "Vital Signs Panel"
+            },
+            "subject": {
+              "reference": "Patient/吳-雅慧-1921-12-03"
+            },
+            "component": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://loinc.org",
+                      "code": "8302-2",
+                      "display": "Body height"
+                    }
+                  ],
+                  "text": "Body Height"
+                },
+                "valueQuantity": {
+                  "value": 166.1,
+                  "unit": "cm",
+                  "system": "http://unitsofmeasure.org",
+                  "code": "cm"
+                }
+              },
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://loinc.org",
+                      "code": "29463-7",
+                      "display": "Body weight"
+                    }
+                  ],
+                  "text": "Body Weight"
+                },
+                "valueQuantity": {
+                  "value": 58.3,
+                  "unit": "kg",
+                  "system": "http://unitsofmeasure.org",
+                  "code": "kg"
+                }
+              },
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://loinc.org",
+                      "code": "39156-5",
+                      "display": "Body mass index (BMI)"
+                    }
+                  ],
+                  "text": "BMI"
+                },
+                "valueQuantity": {
+                  "value": "#Observation.bmi",
+                  "unit": "kg/m2",
+                  "system": "http://unitsofmeasure.org",
+                  "code": "kg/m2"
+                }
+              }
+            ],
+            "id": "9857d71f-5200-4b52-84f7-d900fdf224d4"
+          },
+          "request": {
+            "method": "PUT",
+            "url": "/Observation/9857d71f-5200-4b52-84f7-d900fdf224d4"
+          }
+        },
+        {
+          "fullUrl": "https://twcore.hapi.fhir.tw//Patient/541201dd-8b61-412e-8ff2-bfd27b715bb6",
           "resource": {
             "resourceType": "Patient",
             "meta": {
@@ -219,18 +1110,126 @@
                 "value": "章-建志-2019-01-04"
               }
             ],
+            "name": [
+              {
+                "use": "official",
+                "family": "章",
+                "given": [
+                  "建志"
+                ]
+              }
+            ],
+            "gender": "male",
+            "birthDate": "2019-01-04",
             "managingOrganization": {
               "reference": "Organization/0602030026"
             },
-            "id": "02671f2c-b85f-4199-86e5-57cd130f6cbc"
+            "id": "章-建志-2019-01-04"
           },
           "request": {
             "method": "PUT",
-            "url": "/Patient/02671f2c-b85f-4199-86e5-57cd130f6cbc"
+            "url": "/Patient/541201dd-8b61-412e-8ff2-bfd27b715bb6"
           }
         },
         {
-          "fullUrl": "https://twcore.hapi.fhir.tw//Patient/db676203-4073-4f6e-8fe5-334968f4640f",
+          "fullUrl": "https://twcore.hapi.fhir.tw//Observation/4bdf5455-b29d-4f69-a504-b0437bf61d98",
+          "resource": {
+            "resourceType": "Observation",
+            "meta": {
+              "profile": [
+                "https://twcore.mohw.gov.tw/ig/twcore/StructureDefinition/Observation-vitalSigns-twcore"
+              ]
+            },
+            "status": "final",
+            "category": [
+              {
+                "coding": [
+                  {
+                    "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                    "code": "vital-signs",
+                    "display": "Vital Signs"
+                  }
+                ]
+              }
+            ],
+            "code": {
+              "coding": [
+                {
+                  "system": "http://loinc.org",
+                  "code": "85353-1",
+                  "display": "Vital signs, weight, height, head circumference, oxygen saturation and BMI panel"
+                }
+              ],
+              "text": "Vital Signs Panel"
+            },
+            "subject": {
+              "reference": "Patient/章-建志-2019-01-04"
+            },
+            "component": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://loinc.org",
+                      "code": "8302-2",
+                      "display": "Body height"
+                    }
+                  ],
+                  "text": "Body Height"
+                },
+                "valueQuantity": {
+                  "value": 189.1,
+                  "unit": "cm",
+                  "system": "http://unitsofmeasure.org",
+                  "code": "cm"
+                }
+              },
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://loinc.org",
+                      "code": "29463-7",
+                      "display": "Body weight"
+                    }
+                  ],
+                  "text": "Body Weight"
+                },
+                "valueQuantity": {
+                  "value": 73.7,
+                  "unit": "kg",
+                  "system": "http://unitsofmeasure.org",
+                  "code": "kg"
+                }
+              },
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://loinc.org",
+                      "code": "39156-5",
+                      "display": "Body mass index (BMI)"
+                    }
+                  ],
+                  "text": "BMI"
+                },
+                "valueQuantity": {
+                  "value": "#Observation.bmi",
+                  "unit": "kg/m2",
+                  "system": "http://unitsofmeasure.org",
+                  "code": "kg/m2"
+                }
+              }
+            ],
+            "id": "4bdf5455-b29d-4f69-a504-b0437bf61d98"
+          },
+          "request": {
+            "method": "PUT",
+            "url": "/Observation/4bdf5455-b29d-4f69-a504-b0437bf61d98"
+          }
+        },
+        {
+          "fullUrl": "https://twcore.hapi.fhir.tw//Patient/838d1155-0810-4c27-b003-4a97823e5284",
           "resource": {
             "resourceType": "Patient",
             "meta": {
@@ -244,14 +1243,122 @@
                 "value": "王-志雄-1959-11-30"
               }
             ],
+            "name": [
+              {
+                "use": "official",
+                "family": "王",
+                "given": [
+                  "志雄"
+                ]
+              }
+            ],
+            "gender": "male",
+            "birthDate": "1959-11-30",
             "managingOrganization": {
               "reference": "Organization/0602030026"
             },
-            "id": "db676203-4073-4f6e-8fe5-334968f4640f"
+            "id": "王-志雄-1959-11-30"
           },
           "request": {
             "method": "PUT",
-            "url": "/Patient/db676203-4073-4f6e-8fe5-334968f4640f"
+            "url": "/Patient/838d1155-0810-4c27-b003-4a97823e5284"
+          }
+        },
+        {
+          "fullUrl": "https://twcore.hapi.fhir.tw//Observation/be8e08d3-a73f-427f-81ca-9c45e651214e",
+          "resource": {
+            "resourceType": "Observation",
+            "meta": {
+              "profile": [
+                "https://twcore.mohw.gov.tw/ig/twcore/StructureDefinition/Observation-vitalSigns-twcore"
+              ]
+            },
+            "status": "final",
+            "category": [
+              {
+                "coding": [
+                  {
+                    "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                    "code": "vital-signs",
+                    "display": "Vital Signs"
+                  }
+                ]
+              }
+            ],
+            "code": {
+              "coding": [
+                {
+                  "system": "http://loinc.org",
+                  "code": "85353-1",
+                  "display": "Vital signs, weight, height, head circumference, oxygen saturation and BMI panel"
+                }
+              ],
+              "text": "Vital Signs Panel"
+            },
+            "subject": {
+              "reference": "Patient/王-志雄-1959-11-30"
+            },
+            "component": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://loinc.org",
+                      "code": "8302-2",
+                      "display": "Body height"
+                    }
+                  ],
+                  "text": "Body Height"
+                },
+                "valueQuantity": {
+                  "value": 165.2,
+                  "unit": "cm",
+                  "system": "http://unitsofmeasure.org",
+                  "code": "cm"
+                }
+              },
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://loinc.org",
+                      "code": "29463-7",
+                      "display": "Body weight"
+                    }
+                  ],
+                  "text": "Body Weight"
+                },
+                "valueQuantity": {
+                  "value": 70.2,
+                  "unit": "kg",
+                  "system": "http://unitsofmeasure.org",
+                  "code": "kg"
+                }
+              },
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://loinc.org",
+                      "code": "39156-5",
+                      "display": "Body mass index (BMI)"
+                    }
+                  ],
+                  "text": "BMI"
+                },
+                "valueQuantity": {
+                  "value": "#Observation.bmi",
+                  "unit": "kg/m2",
+                  "system": "http://unitsofmeasure.org",
+                  "code": "kg/m2"
+                }
+              }
+            ],
+            "id": "be8e08d3-a73f-427f-81ca-9c45e651214e"
+          },
+          "request": {
+            "method": "PUT",
+            "url": "/Observation/be8e08d3-a73f-427f-81ca-9c45e651214e"
           }
         }
       ]
